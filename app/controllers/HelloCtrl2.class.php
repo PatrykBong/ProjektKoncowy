@@ -11,18 +11,17 @@ use core\Utils;
  *
  * @author Przemysław Kudłacik
  */
-class HelloCtrl {
+class HelloCtrl2 {
     
-    public function action_hello() {
+    public function action_hello2() {
 		        
-        //$variable = 123;
         $variable = App::GetRouter()->getAction();
         
         App::getMessages()->addMessage(new Message("Hello world message", Message::INFO));
         Utils::addInfoMessage("Or even easier message :-)");
         
         App::getSmarty()->assign("value",$variable);        
-        App::getSmarty()->display("Hello.tpl");
+        App::getSmarty()->display("Hello2.tpl");
         
     }
     

@@ -5,3 +5,5 @@
  * Use it for additional setup.
  */
 #\core\App::getBD()->do_whatever_you_need();
+
+//tutaj bede ustawiał role
