@@ -21,9 +21,13 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li><a href="index.html">This is Massively</a></li>
-							<li><a href="generic.html">Generic Page</a></li>
-							<li class="active"><a href="elements.html">Elements Reference</a></li>
+							<li><a href="{$conf->action_url}start">Start</a></li>
+							<li><a href="#">Moje typy</a></li>
+							<li><a href="#">Typy innych graczy</a></li>
+                                                        <li><a href="#">Tabela</a></li>
+                                                        <li><a href="#">Typowanie mistrza</a></li>
+                                                        <li><a href="#">Regulamin</a></li>
+                                                        <li><a href="{$conf->action_url}logout">Wyloguj</a></li>                                                        
 						</ul>
 						<ul class="icons">
 							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
