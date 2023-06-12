@@ -32,11 +32,12 @@ class loginCtrl {
                 $nazwDB = $val->validate($wiersz["nazwisko"],['trim'=>true]);
                 $nickDB = $val->validate($wiersz["nick"],['trim'=>true]);
                 $pktDB = $val->validate($wiersz["punkty"],['trim'=>true]);
+                $id_uzytkownika = $val->validate($wiersz["id_uzytkownik"],['trim'=>true]);
                 SessionUtils::store("imie", $imieDB);
                 SessionUtils::store("nazwisko", $nazwDB);
                 SessionUtils::store("nick", $nickDB);
                 SessionUtils::store("pkt", $pktDB);
-                $id_uzytkownika = $wiersz["id_uzytkownik"];
+                SessionUtils::store("idUzytkownika", $id_uzytkownika);
                 $wynikDB2 = App::getDB() -> select("rola-uzytkownik",[
                             "[><]rola"=>["id_rola"=>"id_rola"]
                             ],[

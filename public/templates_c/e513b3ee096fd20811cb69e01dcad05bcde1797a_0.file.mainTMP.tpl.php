@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-11 20:36:21
+/* Smarty version 4.3.0, created on 2023-06-12 17:26:20
   from 'C:\xampp\htdocs\typowanieME\app\views\templates\mainTMP.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_64861425212096_61832716',
+  'unifunc' => 'content_6487391c566971_72800746',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e513b3ee096fd20811cb69e01dcad05bcde1797a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\typowanieME\\app\\views\\templates\\mainTMP.tpl',
-      1 => 1686508574,
+      1 => 1686583407,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64861425212096_61832716 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6487391c566971_72800746 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -51,7 +51,8 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 						<ul class="links">
 							<li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
 start">Start</a></li>
-							<li><a href="#">Moje typy</a></li>
+							<li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+mojeTypy">Moje typy</a></li>
 							<li><a href="#">Typy innych graczy</a></li>
                                                         <li><a href="#">Tabela</a></li>
                                                         <li><a href="#">Typowanie mistrza</a></li>
@@ -59,18 +60,12 @@ start">Start</a></li>
                                                         <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
 logout">Wyloguj</a></li>                                                        
 						</ul>
-						<ul class="icons">
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
 					</nav>
 
 				<!-- Main -->
 					<div id="main">
                                             <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_140179607964861425210216_65423367', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15801573836487391c564fb7_66415909', 'content');
 ?>
 
 					</div>
@@ -138,12 +133,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_140179607964861425
 	</body>
 </html><?php }
 /* {block 'content'} */
-class Block_140179607964861425210216_65423367 extends Smarty_Internal_Block
+class Block_15801573836487391c564fb7_66415909 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_140179607964861425210216_65423367',
+    0 => 'Block_15801573836487391c564fb7_66415909',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

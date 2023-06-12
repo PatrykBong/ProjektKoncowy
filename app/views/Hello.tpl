@@ -9,6 +9,8 @@
 <body>
     
     My value: {$value}
+    My value2: {$value21}
+    My value3: {$value22}
     
     {if $msgs->isInfo()}
         <ul>

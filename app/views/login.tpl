@@ -9,7 +9,7 @@
             </div>
             <div class="field">
                 <label for="email">Hasło:</label>
-                <input type="text" name="haslo" id="email" />
+                <input type="password" name="haslo" id="email" />
             </div>
 	</div>
 	<ul class="actions">

@@ -22,18 +22,12 @@
 					<nav id="nav">
 						<ul class="links">
 							<li><a href="{$conf->action_url}start">Start</a></li>
-							<li><a href="#">Moje typy</a></li>
+							<li><a href="{$conf->action_url}mojeTypy">Moje typy</a></li>
 							<li><a href="#">Typy innych graczy</a></li>
                                                         <li><a href="#">Tabela</a></li>
                                                         <li><a href="#">Typowanie mistrza</a></li>
                                                         <li><a href="#">Regulamin</a></li>
                                                         <li><a href="{$conf->action_url}logout">Wyloguj</a></li>                                                        
-						</ul>
-						<ul class="icons">
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 						</ul>
 					</nav>
 
