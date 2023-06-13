@@ -39,7 +39,7 @@ class MainCtrl {
                                         ],[
                                         'ORDER' => ["data"=>"DESC"]
                                         ]);
-        $i = 0;
+        $i = 0; //c
         $listaID = [];
         foreach($wynikDB as $line){
            $idMecz = $wynikDB[$i]["typ"];
