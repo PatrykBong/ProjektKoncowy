@@ -11,7 +11,10 @@ Utils::addRoute('hello2', 'HelloCtrl2', ["user-typer","user-mistrz","admin"]);
 
 Utils::addRoute('start', 'MainCtrl');
 Utils::addRoute('mojeTypy', 'MainCtrl', ["user-typer","user-mistrz"]);
-Utils::addRoute('typuj', 'MainCtrl', ["user-typer","user-mistrz"]);
+Utils::addRoute('typuj', 'MainCtrl', ["user-typer"]);
+Utils::addRoute('typyInnychGraczy', 'MainCtrl', ["user-typer","user-mistrz"]);
+Utils::addRoute('tabela', 'MainCtrl', ["user-typer","user-mistrz"]);
+Utils::addRoute('regulamin', 'MainCtrl', ["user-typer","user-mistrz"]);
 
 Utils::addRoute('login', 'loginCtrl');
 Utils::addRoute('logout', 'loginCtrl');

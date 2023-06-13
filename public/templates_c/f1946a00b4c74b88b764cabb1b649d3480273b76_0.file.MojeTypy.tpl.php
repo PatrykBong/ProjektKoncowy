@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-12 19:41:08
+/* Smarty version 4.3.0, created on 2023-06-12 20:56:47
   from 'C:\xampp\htdocs\typowanieME\app\views\MojeTypy.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_648758b4376a16_62094136',
+  'unifunc' => 'content_64876a6f951701_27257692',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f1946a00b4c74b88b764cabb1b649d3480273b76' => 
     array (
       0 => 'C:\\xampp\\htdocs\\typowanieME\\app\\views\\MojeTypy.tpl',
-      1 => 1686591666,
+      1 => 1686596205,
       2 => 'file',
     ),
   ),
@@ -20,23 +20,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_648758b4376a16_62094136 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64876a6f951701_27257692 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1852685274648758b436bc54_49316588', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_38299172064876a6f9396d7_83062994', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "mainTMP.tpl");
 }
 /* {block 'content'} */
-class Block_1852685274648758b436bc54_49316588 extends Smarty_Internal_Block
+class Block_38299172064876a6f9396d7_83062994 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1852685274648758b436bc54_49316588',
+    0 => 'Block_38299172064876a6f9396d7_83062994',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -54,15 +54,28 @@ $_smarty_tpl->tpl_vars['linia']->do_else = false;
                     <td style="display: none;"><input type="text" name="id<?php echo $_smarty_tpl->tpl_vars['linia']->value["id_mecz"];?>
 " value="<?php echo $_smarty_tpl->tpl_vars['linia']->value["id_mecz"];?>
 "></td>
+                    <td style="display: none;"><input type="text" name="data<?php echo $_smarty_tpl->tpl_vars['linia']->value["id_mecz"];?>
+" value="<?php echo $_smarty_tpl->tpl_vars['linia']->value["data"];?>
+"></td>
                     <td><?php echo $_smarty_tpl->tpl_vars['linia']->value["druz1"];?>
 -<?php echo $_smarty_tpl->tpl_vars['linia']->value["druz2"];?>
 </td>
-                    <td><input type="text" name="wynik<?php echo $_smarty_tpl->tpl_vars['linia']->value["id_mecz"];?>
+                    <td><?php if ((strtotime($_smarty_tpl->tpl_vars['linia']->value['data']))-strtotime(date("Y:m:d H:i:s")) > 3600) {?>
+                            <input type="text" name="wynik<?php echo $_smarty_tpl->tpl_vars['linia']->value["id_mecz"];?>
 " value="<?php echo $_smarty_tpl->tpl_vars['linia']->value["typ"];?>
-"></td>
+">
+                        <?php } else { ?>
+                            <input disabled='disabled' style='background-color: #848484;' type="text" name="wynik<?php echo $_smarty_tpl->tpl_vars['linia']->value["id_mecz"];?>
+" value="<?php echo $_smarty_tpl->tpl_vars['linia']->value["typ"];?>
+ <czas na typowanie minął>">
+                        <?php }?></td>
                     <td><?php echo $_smarty_tpl->tpl_vars['linia']->value["data"];?>
 </td>
-                    <td><input type="submit" value="Wyślij wynik" /></td>
+                    <td><?php if ((strtotime($_smarty_tpl->tpl_vars['linia']->value['data']))-strtotime(date("Y:m:d H:i:s")) > 3600) {?>
+                            <input type="submit" value="Wyślij wynik" />
+                        <?php } else { ?>
+                            <input disabled='disabled' style='background-color: #848484;' type="submit" value="Wyślij wynik" />
+                        <?php }?></td>
                 </tr>
         <?php
 }

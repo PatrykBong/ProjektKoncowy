@@ -23,10 +23,10 @@
 						<ul class="links">
 							<li><a href="{$conf->action_url}start">Start</a></li>
 							<li><a href="{$conf->action_url}mojeTypy">Moje typy</a></li>
-							<li><a href="#">Typy innych graczy</a></li>
-                                                        <li><a href="#">Tabela</a></li>
+							<li><a href="{$conf->action_url}typyInnychGraczy">Typy innych graczy</a></li>
+                                                        <li><a href="{$conf->action_url}tabela">Tabela</a></li>
                                                         <li><a href="#">Typowanie mistrza</a></li>
-                                                        <li><a href="#">Regulamin</a></li>
+                                                        <li><a href="{$conf->action_url}regulamin">Regulamin</a></li>
                                                         <li><a href="{$conf->action_url}logout">Wyloguj</a></li>                                                        
 						</ul>
 					</nav>

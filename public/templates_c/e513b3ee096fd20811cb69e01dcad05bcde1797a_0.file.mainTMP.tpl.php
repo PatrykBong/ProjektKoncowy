@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-12 17:26:20
+/* Smarty version 4.3.0, created on 2023-06-13 20:23:10
   from 'C:\xampp\htdocs\typowanieME\app\views\templates\mainTMP.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6487391c566971_72800746',
+  'unifunc' => 'content_6488b40e8341b7_02158658',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e513b3ee096fd20811cb69e01dcad05bcde1797a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\typowanieME\\app\\views\\templates\\mainTMP.tpl',
-      1 => 1686583407,
+      1 => 1686680370,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6487391c566971_72800746 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6488b40e8341b7_02158658 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -53,10 +53,13 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 start">Start</a></li>
 							<li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
 mojeTypy">Moje typy</a></li>
-							<li><a href="#">Typy innych graczy</a></li>
-                                                        <li><a href="#">Tabela</a></li>
+							<li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+typyInnychGraczy">Typy innych graczy</a></li>
+                                                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+tabela">Tabela</a></li>
                                                         <li><a href="#">Typowanie mistrza</a></li>
-                                                        <li><a href="#">Regulamin</a></li>
+                                                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+regulamin">Regulamin</a></li>
                                                         <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
 logout">Wyloguj</a></li>                                                        
 						</ul>
@@ -65,7 +68,7 @@ logout">Wyloguj</a></li>
 				<!-- Main -->
 					<div id="main">
                                             <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15801573836487391c564fb7_66415909', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20369092316488b40e833758_90083592', 'content');
 ?>
 
 					</div>
@@ -133,12 +136,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15801573836487391c
 	</body>
 </html><?php }
 /* {block 'content'} */
-class Block_15801573836487391c564fb7_66415909 extends Smarty_Internal_Block
+class Block_20369092316488b40e833758_90083592 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_15801573836487391c564fb7_66415909',
+    0 => 'Block_20369092316488b40e833758_90083592',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
