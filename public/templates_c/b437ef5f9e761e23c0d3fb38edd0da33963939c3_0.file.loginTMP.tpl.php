@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-08 15:08:26
+/* Smarty version 4.3.0, created on 2023-06-17 12:30:46
   from 'C:\xampp\htdocs\typowanieME\app\views\templates\loginTMP.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6481d2ca2e3510_62105622',
+  'unifunc' => 'content_648d8b56bb5988_47257999',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6481d2ca2e3510_62105622 (Smarty_Internal_Template $_smarty_tpl) {
+function content_648d8b56bb5988_47257999 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -51,7 +51,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 				<!-- Main -->
 					<div id="main">
                                             <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_994728686481d2ca2e2487_92509602', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1548353791648d8b56bb48c0_13334672', 'content');
 ?>
 
 					</div>
@@ -119,12 +119,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_994728686481d2ca2e
 	</body>
 </html><?php }
 /* {block 'content'} */
-class Block_994728686481d2ca2e2487_92509602 extends Smarty_Internal_Block
+class Block_1548353791648d8b56bb48c0_13334672 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_994728686481d2ca2e2487_92509602',
+    0 => 'Block_1548353791648d8b56bb48c0_13334672',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

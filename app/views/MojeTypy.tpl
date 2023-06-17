@@ -1,9 +1,10 @@
 {extends file="mainTMP.tpl"}
 
 {block name=content}
-    <form method="post" action="typuj"><table>
+    <form method="post" action="typuj">
+        <table>
         <tr><td>mecz</td><td>typ</td><td>data</td><td></td></tr>
-        {foreach $tabela as $linia}
+            {foreach $tabela as $linia}
                 <tr>
                     <td style="display: none;"><input type="text" name="id{$linia["id_mecz"]}" value="{$linia["id_mecz"]}"></td>
                     <td style="display: none;"><input type="text" name="data{$linia["id_mecz"]}" value="{$linia["data"]}"></td>
@@ -20,6 +21,7 @@
                             <input disabled='disabled' style='background-color: #848484;' type="submit" value="Wyślij wynik" />
                         {/if}</td>
                 </tr>
-        {/foreach}
-    </table></form>
+            {/foreach}
+        </table>
+    </form>
 {/block}

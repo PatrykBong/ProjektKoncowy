@@ -42,5 +42,5 @@
         {/foreach}
         </tr>
     {/foreach}
-    </table>}
+    </table>
 {/block}

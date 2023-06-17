@@ -6,6 +6,7 @@ use core\App;
 use core\SessionUtils;
 use core\ParamUtils;
 use core\Validator;
+use core\Messages;
 
 class MainCtrl {
     
@@ -93,7 +94,7 @@ class MainCtrl {
                     "mecz"=>$mecz,
                     "typ"=>$typ
                 ]);
-            }
+            }//else dodaj komunikat
             $i++;
         }
         App::getRouter()->redirectTo("mojeTypy");
@@ -175,7 +176,7 @@ class MainCtrl {
         $wynikDB = App::getDB()->select("uzytkownik",[
                                         "uzytkownik.imie","uzytkownik.nazwisko","uzytkownik.punkty"
                                         ],[
-                                        'ORDER'=>"punkty"
+                                        'ORDER'=>["punkty"=>"DESC"]
                                         ]);
         App::getSmarty()->assign("tabela",$wynikDB);
         App::getSmarty()->display("Tabela.tpl");
@@ -183,5 +184,70 @@ class MainCtrl {
     
     public function action_regulamin(){
         App::getSmarty()->display("Regulamin.tpl"); 
+    }
+    
+    public function action_typowanieMistrza(){
+        $listaReprezentacji = App::getDB()->select("reprezentacja",["nazwa"]);
+        $dataPierwszegoMeczuDB = App::getDB()->select("mecz",["data"],['LIMIT'=>1,'ORDER'=>"data"]);
+        $dataPierwszegoMeczu = $dataPierwszegoMeczuDB[0]["data"];
+        SessionUtils::store("data_pierwszego_meczu", $dataPierwszegoMeczu);
+        SessionUtils::loadMessages();
+        
+        $idUzytkownika = SessionUtils::load("idUzytkownika", $keep = true);
+        $typMistrzaUzytkownikaDB = App::getDB()->select("uzytkownik",[
+                                        "[><]reprezentacja"=>["typ_na_mistrza"=>"id_reprezentacja"]
+                                        ],[
+                                        "reprezentacja.nazwa"
+                                        ],[
+                                        "uzytkownik.id_uzytkownik"=>$idUzytkownika
+                                        ]);
+        $tabelaTypowNaMistrzaDB = App::getDB()->select("uzytkownik",[
+                                        "[><]reprezentacja"=>["typ_na_mistrza"=>"id_reprezentacja"]
+                                        ],[
+                                        "reprezentacja.nazwa","reprezentacja.w_turnieju","ile" => App::getDB()->raw("COUNT(<typ_na_mistrza>)")
+                                        ],[
+                                        "typ_na_mistrza[!]"=>NULL, 'GROUP'=>"typ_na_mistrza"
+                                        ]);
+        $typMistrzaUzytkownika=0;
+        foreach($typMistrzaUzytkownikaDB as $jednaLinia){
+            $typMistrzaUzytkownika = $jednaLinia[0]["nazwa"];
+        }
+        if(!is_null($typMistrzaUzytkownika)){
+            App::getSmarty()->assign("typMUzytkownika",$typMistrzaUzytkownika);
+        }
+        App::getSmarty()->assign("dataPierwszegoMeczu",$dataPierwszegoMeczu);
+        App::getSmarty()->assign("listaReprezentacji",$listaReprezentacji);
+        App::getSmarty()->assign("tabelaTNM",$tabelaTypowNaMistrzaDB);
+        App::getSmarty()->display("TypowanieMistrza.tpl"); 
+    }
+    
+    public function action_typujMistrza(){
+        $dataPierwszegoMeczu = SessionUtils::load("data_pierwszego_meczu", $keep = true);
+        if(strtotime($dataPierwszegoMeczu)-strtotime(date("Y:m:d H:i:s"))>3600){
+            $listaReprezentacji = App::getDB()->select("reprezentacja",["id_reprezentacja", "nazwa"]);
+            $typUzytkownika = ParamUtils::getFromPost("druzyna");
+            $idUzytkownika = SessionUtils::load("idUzytkownika", $keep = true);
+            $ok = false;
+            foreach ($listaReprezentacji as $linia) {
+                if($linia["nazwa"] == $typUzytkownika){
+                    $ok = true;
+                    $typID = $linia["id_reprezentacja"];
+                }
+            }
+            App::getMessages()->clear();
+            if(!$ok){
+                App::getMessages()->addMessage(new \core\Message("Wprowadzono niepoprawną nazwę reprezentacji", \core\Message::ERROR));
+            }else{
+                App::getDB()->update("uzytkownik",[
+                        "typ_na_mistrza" => $typID
+                    ],[
+                        "id_uzytkownik"=> $idUzytkownika
+                    ]);
+            }
+        }else{
+            App::getMessages()->addMessage(new \core\Message("Czas na typowanie minęła oszuściku :)", \core\Message::INFO));
+        }
+        SessionUtils::storeMessages();
+        App::getRouter()->redirectTo("typowanieMistrza");
     }
 }

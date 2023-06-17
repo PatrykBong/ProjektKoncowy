@@ -20,23 +20,14 @@
 
 				<!-- Nav -->
 					<nav id="nav">
-                                                {if \core\RoleUtils::inRole("admin")}
 						<ul class="links" style="font-size: 1px;">
-                                                {else}
-                                                <ul class="links">   
-                                                {/if}
-							<li><a href="{$conf->action_url}start">Start</a></li>
-							<li><a href="{$conf->action_url}mojeTypy">Moje typy</a></li>
-							<li><a href="{$conf->action_url}typyInnychGraczy">Typy innych graczy</a></li>
-                                                        <li><a href="{$conf->action_url}tabela">Tabela</a></li>
-                                                        <li><a href="{$conf->action_url}typowanieMistrza">Typowanie mistrza</a></li>
-                                                        <li><a href="{$conf->action_url}regulamin">Regulamin</a></li>
-                                                        <li><a href="{$conf->action_url}logout">Wyloguj</a></li>
-                                                        {if \core\RoleUtils::inRole("admin")}
-                                                        <li><a href="{$conf->action_url}admin">Admin mode</a></li>
-                                                        {/if} 
+							<li><a href="#wyniki_meczy">Wprowadź/Aktualizuj wynik</a></li>
+							<li><a href="#mecze">Dodaj/Usuń mecz</a></li>
+							<li><a href="#gracze_i_role">Dodaj/Usuń gracza i role</a></li>
+                                                        <li><a href="#reprezentacje">Dodaj/Usuń reprezentacje</a></li>
+                                                        <li><a href="{$conf->action_url}logout">Wyloguj</a></li>                                                        
 						</ul>
-                                        </nav>
+					</nav>
 
 				<!-- Main -->
 					<div id="main">

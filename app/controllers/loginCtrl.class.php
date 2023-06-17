@@ -13,7 +13,6 @@ use core\SessionUtils;
 class loginCtrl {
     
     public function action_login() {
-        
         if(RoleUtils::inRole("admin") || RoleUtils::inRole("user-typer") || RoleUtils::inRole("user-mistrz")){
             App::getRouter()->redirectTo("start");
         }
@@ -65,6 +64,7 @@ class loginCtrl {
         SessionUtils::remove("nazwisko");
         SessionUtils::remove("nick");
         SessionUtils::remove("pkt");
+        SessionUtils::remove("idUzytkownika");
         App::getSmarty()->display("login.tpl");
     }
     
