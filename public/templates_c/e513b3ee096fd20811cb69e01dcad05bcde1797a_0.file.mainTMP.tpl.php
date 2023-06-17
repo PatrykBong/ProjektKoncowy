@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-17 15:12:47
+/* Smarty version 4.3.0, created on 2023-06-17 21:04:30
   from 'C:\xampp\htdocs\typowanieME\app\views\templates\mainTMP.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_648db14f427241_80926390',
+  'unifunc' => 'content_648e03be838340_83432137',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e513b3ee096fd20811cb69e01dcad05bcde1797a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\typowanieME\\app\\views\\templates\\mainTMP.tpl',
-      1 => 1687007546,
+      1 => 1687028657,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_648db14f427241_80926390 (Smarty_Internal_Template $_smarty_tpl) {
+function content_648e03be838340_83432137 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -65,8 +65,13 @@ tabela">Tabela</a></li>
 typowanieMistrza">Typowanie mistrza</a></li>
                                                         <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
 regulamin">Regulamin</a></li>
+                                                        <?php if (\core\RoleUtils::inRole("admin") || \core\RoleUtils::inRole("user-typer") || \core\RoleUtils::inRole("user-mistrz")) {?>
                                                         <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
 logout">Wyloguj</a></li>
+                                                        <?php } else { ?>
+                                                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+login">Zaloguj</a></li>
+                                                        <?php }?>
                                                         <?php if (\core\RoleUtils::inRole("admin")) {?>
                                                         <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
 admin">Admin mode</a></li>
@@ -77,7 +82,7 @@ admin">Admin mode</a></li>
 				<!-- Main -->
 					<div id="main">
                                             <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_427382476648db14f4264e6_80088621', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_151705904648e03be836fa2_45002465', 'content');
 ?>
 
 					</div>
@@ -145,12 +150,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_427382476648db14f4
 	</body>
 </html><?php }
 /* {block 'content'} */
-class Block_427382476648db14f4264e6_80088621 extends Smarty_Internal_Block
+class Block_151705904648e03be836fa2_45002465 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_427382476648db14f4264e6_80088621',
+    0 => 'Block_151705904648e03be836fa2_45002465',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

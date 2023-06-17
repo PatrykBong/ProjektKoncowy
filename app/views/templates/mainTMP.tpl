@@ -31,7 +31,11 @@
                                                         <li><a href="{$conf->action_url}tabela">Tabela</a></li>
                                                         <li><a href="{$conf->action_url}typowanieMistrza">Typowanie mistrza</a></li>
                                                         <li><a href="{$conf->action_url}regulamin">Regulamin</a></li>
+                                                        {if \core\RoleUtils::inRole("admin") || \core\RoleUtils::inRole("user-typer") || \core\RoleUtils::inRole("user-mistrz")}
                                                         <li><a href="{$conf->action_url}logout">Wyloguj</a></li>
+                                                        {else}
+                                                        <li><a href="{$conf->action_url}login">Zaloguj</a></li>
+                                                        {/if}
                                                         {if \core\RoleUtils::inRole("admin")}
                                                         <li><a href="{$conf->action_url}admin">Admin mode</a></li>
                                                         {/if} 
